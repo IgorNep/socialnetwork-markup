@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "serve": "parcel ./src/index.html -p 3000 --open chrome ",
-    "build": "parcel build ./src/index.html",
+    "build": "parcel build ./src/index.html --no-source-maps",
     "sass": "node-sass -w ./src/scss/ -o  ./src/css/ --recursive",
     "dev": "concurrently \"npm run serve\" \"npm run sass\""
   },

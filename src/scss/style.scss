@@ -118,6 +118,14 @@ img {
 
   .profile-about {
     grid-area: about;
+    text-align: center;
+
+    .skills {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
   }
   .profile-exp {
     grid-area: exp;
@@ -125,7 +133,58 @@ img {
   .profile-edu {
     grid-area: edu;
   }
+  .profile-exp,
+  .profile-edu {
+    & > div {
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: #ccc 1px dotted;
+
+      &:last-child {
+        border: none;
+      }
+    }
+    p {
+      margin: 0.5rem 0;
+    }
+  }
+
   .profile-github {
     grid-area: github;
+
+    .repo {
+      display: flex;
+
+      & > div:first-child {
+        flex: 7;
+        flex-basis: 70%;
+      }
+      & > div:last-child {
+        flex: 3;
+        flex-basis: 20%;
+      }
+    }
   }
 }
+
+//Posts Page
+.post-form-header {
+  padding: 0.5rem;
+}
+
+.post {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 1rem;
+
+  & > div:first-child {
+    text-align: center;
+  }
+  img {
+    width: 150px;
+  }
+}
+
+@import './mobile';
